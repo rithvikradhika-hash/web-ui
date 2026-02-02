@@ -37,7 +37,7 @@ export function Features() {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4 reveal">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
@@ -58,16 +58,17 @@ export function Features() {
             return (
               <div
                 key={index}
-                className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
+                className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center reveal ${
                   isEven ? '' : 'lg:direction-rtl'
                 }`}
               >
                 {/* Image */}
                 <div className={`${isEven ? '' : 'lg:order-2'}`}>
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl card-hover reveal">
                     <img
                       src={feature.image}
                       alt={feature.title}
+                      loading="lazy"
                       className="w-full h-80 object-cover"
                     />
                     <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-20`}></div>
@@ -75,7 +76,7 @@ export function Features() {
                 </div>
 
                 {/* Content */}
-                <div className={`space-y-6 ${isEven ? '' : 'lg:order-1'}`}>
+                <div className={`space-y-6 reveal ${isEven ? '' : 'lg:order-1'}`}>
                   <div className={`bg-gradient-to-br ${feature.gradient} w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>

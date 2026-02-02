@@ -131,9 +131,6 @@
   }
 }
 
-/**
- * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
- */
 @layer base {
   :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
     h1 {
@@ -183,3 +180,89 @@
 html {
   font-size: var(--font-size);
 }
+
+/* -----------------------------
+   Motion & Reveal utilities
+   ----------------------------- */
+:root {
+  --duration-short: 120ms;
+  --duration-medium: 260ms;
+  --duration-long: 420ms;
+  --ease-standard: cubic-bezier(.22,.12,.04,1);
+  --reveal-stagger: 80ms;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(10px) scale(0.995);
+  will-change: opacity, transform;
+  transition: opacity var(--duration-medium) var(--ease-standard) var(--reveal-delay, 0ms), transform var(--duration-medium) var(--ease-standard) var(--reveal-delay, 0ms);
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.card-hover {
+  transition: transform var(--duration-medium) var(--ease-standard), box-shadow var(--duration-medium) var(--ease-standard);
+  will-change: transform, box-shadow;
+}
+.card-hover:hover, .card-hover:focus-within {
+  transform: translateY(-6px) rotateZ(0.01deg);
+  box-shadow: 0 24px 48px rgba(16,24,40,0.12);
+}
+
+.hover-float {
+  transition: transform var(--duration-medium) var(--ease-standard), box-shadow var(--duration-medium) var(--ease-standard);
+}
+.hover-float:hover, .hover-float:focus {
+  transform: translateY(-4px);
+}
+
+.hover-tilt {
+  transition: transform var(--duration-medium) var(--ease-standard);
+  transform-origin: center;
+}
+.hover-tilt:hover { transform: rotateZ(-1.5deg) translateY(-3px); }
+
+.cta { transition: transform var(--duration-short) var(--ease-standard), box-shadow var(--duration-short) var(--ease-standard); }
+.cta:focus, .cta:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 10px 30px rgba(0,0,0,0.12); outline: none; }
+
+.link-underline { position: relative; display: inline-block; }
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -3px;
+  height: 2px;
+  background: linear-gradient(90deg,var(--color-sidebar-primary),var(--color-primary));
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform var(--duration-medium) var(--ease-standard);
+}
+.link-underline:hover::after, .link-underline:focus::after { transform: scaleX(1); }
+
+.page-loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,245,255,0.95));
+  z-index: 9999;
+  pointer-events: all;
+  transition: opacity 420ms var(--ease-standard), visibility 420ms var(--ease-standard);
+  opacity: 1;
+}
+.page-loader.is-hidden { opacity: 0; pointer-events: none; visibility: hidden; }
+
+.page-loader .spinner { width: 56px; height: 56px; border-radius: 9999px; position: relative; }
+.page-loader .spinner::before { content: ''; position: absolute; inset: 0; border-radius: 9999px; border: 4px solid rgba(128,90,213,0.15); }
+.page-loader .spinner::after { content: ''; position: absolute; inset: 6px; border-radius: 9999px; border-top: 4px solid rgba(128,90,213,0.95); animation: spin 900ms linear infinite; }
+@keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .card-hover, .cta, .hover-float, .hover-tilt { transition: none !important; animation: none !important; transform: none !important; }
+  .page-loader .spinner::after { animation: none; }
+}
+

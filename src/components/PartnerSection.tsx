@@ -30,7 +30,7 @@ export function PartnerSection() {
   };
 
   return (
-    <section id="partner-section" className="py-20 px-4 bg-gradient-to-br from-purple-100 to-pink-100">
+    <section id="partner-section" className="py-20 px-4 bg-gradient-to-br from-purple-100 to-pink-100 reveal">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
@@ -49,7 +49,7 @@ export function PartnerSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Benefits */}
           <div className="space-y-6">
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <div className="bg-white rounded-2xl p-8 shadow-lg reveal card-hover">
               <h3 className="text-2xl font-bold text-purple-900 mb-6">
                 Partner Benefits
               </h3>
@@ -75,13 +75,13 @@ export function PartnerSection() {
             </div>
 
             {/* Partner Login Link */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-purple-200">
+            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-purple-200 reveal card-hover">
               <h4 className="font-semibold text-purple-900 mb-3">Already a Partner?</h4>
               <a
                 href="https://partner.wigglywoosh.co.in"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-purple-600 hover:text-purple-800 font-semibold transition-colors"
+                className="inline-flex items-center gap-2 text-purple-600 hover:text-purple-800 font-semibold transition-colors link-underline"
               >
                 Access Partner Dashboard
                 <ExternalLink className="w-5 h-5" />
@@ -90,7 +90,7 @@ export function PartnerSection() {
           </div>
 
           {/* Right Side - Form */}
-          <div className="bg-white rounded-2xl p-8 shadow-2xl">
+          <div className="bg-white rounded-2xl p-8 shadow-2xl reveal card-hover">
             <h3 className="text-2xl font-bold text-purple-900 mb-6">
               Request an Audit
             </h3>
@@ -173,7 +173,7 @@ export function PartnerSection() {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
+                  className="w-full cta bg-gradient-to-r from-purple-600 to-pink-500 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
                 >
                   <Send className="w-5 h-5" />
                   Submit Request
