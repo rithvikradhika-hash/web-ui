@@ -25,12 +25,12 @@ export function Trust() {
   ];
 
   return (
-    <section className="py-20 px-4 bg-white/50 backdrop-blur-sm">
+    <section className="py-20 px-4 bg-white/50 backdrop-blur-sm reveal">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-16 space-y-4 reveal">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="bg-gradient-to-br from-green-400 to-emerald-500 p-4 rounded-2xl shadow-lg">
+            <div className="bg-gradient-to-br from-green-400 to-emerald-500 p-4 rounded-2xl shadow-lg hover-tilt">
               <Shield className="w-10 h-10 text-white" />
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-purple-900">
@@ -49,9 +49,10 @@ export function Trust() {
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-200 border-2 border-green-100"
+                data-reveal-delay={index * 70}
+                className="bg-white rounded-2xl p-6 shadow-lg transition-all duration-200 card-hover hover-float reveal border-2 border-green-100"
               >
-                <div className="bg-gradient-to-br from-green-100 to-emerald-100 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
+                <div className="bg-gradient-to-br from-green-100 to-emerald-100 w-14 h-14 rounded-xl flex items-center justify-center mb-4 hover-tilt">
                   <Icon className="w-7 h-7 text-green-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-purple-900 mb-2">
@@ -66,7 +67,7 @@ export function Trust() {
         </div>
 
         {/* Verified Badge Showcase */}
-        <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-8 md:p-12 border-2 border-green-200 shadow-xl">
+        <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-8 md:p-12 border-2 border-green-200 shadow-xl reveal card-hover" data-reveal-delay={trustFeatures.length * 70}>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
               <div className="flex items-center gap-3">
@@ -80,7 +81,7 @@ export function Trust() {
                 for hygiene, safety, and quality standards. We don't just check boxes—we visit in person.
               </p>
               <div className="flex items-center gap-4 pt-4">
-                <div className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 shadow-lg">
+                <div className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 shadow-lg hover-float">
                   <CheckCircle className="w-5 h-5" />
                   Wigglywoosh Verified
                 </div>
@@ -88,7 +89,7 @@ export function Trust() {
             </div>
 
             <div className="space-y-4">
-              <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="bg-white rounded-2xl p-6 shadow-lg reveal card-hover" data-reveal-delay={1 * 70}>
                 <div className="flex items-center gap-3 mb-3">
                   <Lock className="w-6 h-6 text-blue-600" />
                   <h4 className="font-semibold text-purple-900">SSL/TLS Encryption</h4>
@@ -98,7 +99,7 @@ export function Trust() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-2xl p-6 shadow-lg">
+              <div className="bg-white rounded-2xl p-6 shadow-lg reveal card-hover" data-reveal-delay={2 * 70}>
                 <div className="flex items-center gap-3 mb-3">
                   <Shield className="w-6 h-6 text-purple-600" />
                   <h4 className="font-semibold text-purple-900">Data Privacy Guaranteed</h4>

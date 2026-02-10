@@ -14,7 +14,7 @@ export function Hero() {
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-pink-300 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center relative z-10 reveal">
         {/* Left Content */}
         <div className="text-center lg:text-left space-y-8">
           {/* Logo */}
@@ -41,13 +41,13 @@ export function Hero() {
               href="https://app.wigglywoosh.co.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-purple-600 to-pink-500 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+              className="cta bg-gradient-to-r from-purple-600 to-pink-500 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
             >
               Launch Your Pet's Vault
             </a>
             <button
               onClick={scrollToPartners}
-              className="bg-white text-purple-700 px-8 py-4 rounded-full text-lg font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 border-2 border-purple-200"
+              className="cta bg-white text-purple-700 px-8 py-4 rounded-full text-lg font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 border-2 border-purple-200"
             >
               For Vets & Groomers
             </button>
@@ -68,10 +68,11 @@ export function Hero() {
 
         {/* Right Image */}
         <div className="relative">
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl card-hover reveal">
             <img
               src="https://images.unsplash.com/photo-1629751223385-5e9e8c004b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGRvZyUyMHB1cHB5fGVufDF8fHx8MTc2ODY0MzYxOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
               alt="Happy puppy"
+              loading="lazy"
               className="w-full h-auto object-cover"
             />
           </div>

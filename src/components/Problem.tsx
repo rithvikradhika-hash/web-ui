@@ -25,10 +25,10 @@ export function Problem() {
   ];
 
   return (
-    <section className="py-20 px-4 bg-white/50 backdrop-blur-sm">
+    <section className="py-20 px-4 bg-white/50 backdrop-blur-sm reveal">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-16 space-y-4 reveal">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-purple-900">
             The Problem Pet Parents Face
           </h2>
@@ -45,9 +45,10 @@ export function Problem() {
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 border-2 border-purple-100"
+                data-reveal-delay={index * 80}
+                className="bg-white rounded-2xl p-6 shadow-lg transition-all duration-200 card-hover hover-float reveal border-2 border-purple-100"
               >
-                <div className="bg-gradient-to-br from-pink-100 to-purple-100 w-16 h-16 rounded-xl flex items-center justify-center mb-4">
+                <div className="bg-gradient-to-br from-pink-100 to-purple-100 w-16 h-16 rounded-xl flex items-center justify-center mb-4 hover-tilt">
                   <Icon className="w-8 h-8 text-purple-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-purple-900 mb-2">
@@ -62,7 +63,7 @@ export function Problem() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-center reveal" data-reveal-delay={problems.length * 80}>
           <p className="text-2xl font-semibold text-purple-900 mb-4">
             There's a better way to care for your pet.
           </p>
